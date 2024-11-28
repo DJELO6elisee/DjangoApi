@@ -43,12 +43,13 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'algoliasearch_django',
     'rest_framework_simplejwt',
+    'drf_yasg',
 ]
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=2),
-    "REFRESH_TOKEN_LIFETIME": timedelta(minutes=5),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(minutes=20),
 }
 
 ALGOLIA = {
