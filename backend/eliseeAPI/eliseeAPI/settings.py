@@ -103,7 +103,7 @@ TEMPLATES = [
         },
     },
 ]
-SETTINGS_MODULE = os.environ.get('DJANGO_SETTINGS_MODULE', 'eliseeAPI.settings')
+SETTINGS_MODULE = os.environ.get('DJANGO_SETTINGS_MODULE', 'backend.eliseeAPI.settings')
 
 
 WSGI_APPLICATION = 'eliseeAPI.wsgi.application'
