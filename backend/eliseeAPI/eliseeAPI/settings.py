@@ -29,7 +29,7 @@ DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -103,10 +103,10 @@ TEMPLATES = [
         },
     },
 ]
-SETTINGS_MODULE = os.environ.get('DJANGO_SETTINGS_MODULE', 'backend.eliseeAPI.settings')
+SETTINGS_MODULE = os.environ.get('DJANGO_SETTINGS_MODULE', 'backend.eliseeAPI.eliseeAPI.settings')
 
 
-WSGI_APPLICATION = 'backend.eliseeAPI.wsgi.application'
+WSGI_APPLICATION = 'backend.eliseeAPI.eliseeAPI.wsgi.application'
 
 
 # Database
