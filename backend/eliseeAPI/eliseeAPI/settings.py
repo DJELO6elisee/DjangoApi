@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,14 +19,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(3rjw%j85_n+**3h^c-i2-6ir4#1e_+3=ups!pz$of87wu+ubz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -99,6 +103,8 @@ TEMPLATES = [
         },
     },
 ]
+SETTINGS_MODULE = os.environ.get('DJANGO_SETTINGS_MODULE', 'eliseeAPI.settings')
+
 
 WSGI_APPLICATION = 'eliseeAPI.wsgi.application'
 
